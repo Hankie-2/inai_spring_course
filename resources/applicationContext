@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Способ с аннтоацией -->
+    <context:component-scan base-package="org.example.mining"/>
+
+    <context:property-placeholder location="classpath:myApp.properties"/>
+
+    <bean id="sayHello"
+          class="org.example.hello.Hello">
+        <property name="hello" value="${hello}"/>
+    </bean>
+
+
+
+    <!-- Способ с XML файлом -->
+<!--    <bean id="ethash"-->
+<!--          class="org.example.xmlMiner.Ethash">-->
+<!--    </bean>-->
+
+<!--    <bean id="sha256"-->
+<!--          class="org.example.xmlMiner.SHA256">-->
+<!--    </bean>-->
+
+<!--    <bean id="beanMiner"-->
+<!--          class="org.example.xmlMiner.Miner">-->
+<!--        <constructor-arg ref="ethash"/>-->
+<!--    </bean>-->
+
+
+
+</beans>
